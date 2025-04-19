@@ -1,4 +1,4 @@
-name: CI: Linter + Docker Build & Push
+
 
 on:
   push:
