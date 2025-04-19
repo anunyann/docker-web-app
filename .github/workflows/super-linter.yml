@@ -23,7 +23,7 @@ jobs:
 
   docker:
     name: Docker Build & Push
-    needs: lint  # only run this if linting passes
+    needs: lint
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +34,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Docker image
-        run: docker build -t yourdockerhubusername/docker-web-app .
+        run: docker build -t anunyan1/docker-web-app .
 
       - name: Push Docker image
-        run: docker push yourdockerhubusername/docker-web-app
+        run: docker push anunyan1/docker-web-app
